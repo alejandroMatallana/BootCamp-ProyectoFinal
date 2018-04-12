@@ -5,23 +5,34 @@
     </h1>
 </div>
 
+<div style="text-align:center">
 <input type="text"
        placeholder="Escriba una tarea"
        (keydown.enter)="crearTodo($event.target)">
 
+    </div>
 
-<ul>
-    <li *ngFor="let todo of obtenerEstado()">
-        <app-todo [todoDatos]="todo"
-                  (elminiarTarea)="eliminarTodo($event)"
-                  (seleccionarChecbox)="verificarChecbox($event)"></app-todo>
-    </li>
-</ul>
+<br>
 
+    <div style="text-align:center">
+
+
+    <div type="text" *ngFor="let todo of obtenerEstado()">
+            <app-todo [todoDatos]="todo"
+            (elminiarTarea)="eliminarTodo($event)"
+            (seleccionarChecbox)="verificarChecbox($event)"></app-todo>
+    </div>
+    
+
+
+
+</div>
+
+<div style="text-align:center">
 
 <br>
 <br> {{obtenerCantidad()}} item left
-<input type="button"
+<input type="button" 
        (click)="setModeTodos()"
        value="todos">
 <input type="button"
@@ -34,6 +45,6 @@
        (click)="eliminarCompletados()"
        value="limpiar completados">
 
-
+    </div>
 
 
