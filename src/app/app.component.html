@@ -4,6 +4,7 @@
          {{ title }}
     </h1>
 </div>
+
 <input type="text"
        placeholder="Escriba una tarea"
        (keydown.enter)="crearTodo($event.target)">
@@ -29,6 +30,9 @@
 <input type="button"
        (click)="setModeActivos()"
        value="activos">
+<input type="button"
+       (click)="eliminarCompletados()"
+       value="limpiar completados">
 
 
 

@@ -44,4 +44,15 @@ export class TodoServiceService {
 		}
 		this.db.collection('todos').doc(todo.id).update(todo);
 	}
+
+	/**
+	 * Metodo que se encarga de eliminar las tareas que estan completadas
+	 * borra todas las tareas que esten completas
+	 * @param todo, los todos que cumplan con el estado de terminado
+	 */
+	elminarTareasCompletas(todo: Todo[]) {
+		for (const todos of todo) {
+			this.db.collection('todos').doc(todos.id).delete();
+		}
+	}
 }

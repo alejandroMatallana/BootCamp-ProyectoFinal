@@ -88,4 +88,14 @@ export class AppComponent {
 			}
 		}
 	}
+
+	/**
+	 * Metodo que se utiliza para eliminar los Todos que estan completos
+	 * @param todo, el o los todos que tienen estado completado
+	 */
+	eliminarCompletados(todo: Todo) {
+		this.todo = this.todo.filter((todo) => todo.active === false);
+		this.todoService.elminarTareasCompletas(this.todo);
+		this.setModeActivos();
+	}
 }
